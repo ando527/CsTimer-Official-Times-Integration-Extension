@@ -1,4 +1,4 @@
-# CsTimer-Official-Times-Integration-Extension
+# CsTimer Official Times Integration Extension
 
 Chrome Extension using the WCA API to compare CsTimer Session times to your Official Results
 
