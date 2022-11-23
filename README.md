@@ -9,7 +9,7 @@ Make sure your session scramble is set to "WCA" and then your event
 
 
 # Instructions for install:
-1. Extract Zip file
+1. Download folder
 2. Turn on 'Developer mode' in chrome://extensions/
 3. press 'Load Unpacked' and choose the 'OfficialTimes' Folder that was extracted in step 1
 4. you're good to go!
