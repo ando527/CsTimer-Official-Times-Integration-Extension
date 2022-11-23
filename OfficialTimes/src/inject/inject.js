@@ -13,7 +13,7 @@
 		//alert('working');
 		
 		const javascriptinject = document.createElement("script");
-		javascriptinject.src = chrome.extension.getURL("src/functions/officialtimes.js");
+		javascriptinject.src = chrome.runtime.getURL("src/functions/officialtimes.js");
 		document.body.appendChild(javascriptinject);
 
 
