@@ -1,18 +1,22 @@
 {
-  "name": "Official results insertion",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
+  "name": "CsTimer Official results insertion",
+  "version": "0.0.2",
+  "manifest_version": 3,
+  "description": "Compare your Times in CSTimer to your Official WCA profile!",
+  "homepage_url": "https://github.com/ando527/CsTimer-Official-Times-Integration-Extension",
+  "author": "Mitchell Anderson",
+  "action": {
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      },
+      "default_title": "CsTimer Official results insertion"
+    },
   "default_locale": "en",
-  "permissions": [
+  "host_permissions": [
     "https://cstimer.net/*"
-  ],
+],
   "content_scripts": [
     {
       "matches": [
@@ -24,6 +28,11 @@
     }
   ],
   "web_accessible_resources": [
+  {
+	  "resources": [
 		"src/functions/*"
+		],
+		"matches": ["https://cstimer.net/*"]
+  }
 	]
 }
