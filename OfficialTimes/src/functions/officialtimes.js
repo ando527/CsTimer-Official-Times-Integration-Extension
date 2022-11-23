@@ -90,7 +90,7 @@ function highlighttimes() {
 			ScrambleEvent = '555bf';
 		break;
 	}
-	
+	if (typeof globalimporteddata !== "undefined") {
 	//Check if Scramble is set to "WCA" and that the WCA ID attatched has official results for selected scramble
 	if ((ScrambleCategory == 0) && globalimporteddata['personal_records'].hasOwnProperty(ScrambleEvent)){
 		//for all times in sidebar, highlight green times faster than official records
@@ -115,6 +115,7 @@ function highlighttimes() {
 	} else {
 		document.getElementById("rawwcaid").placeholder = "Invalid Session Scramble";
 	}
+}
 }
 
 function checkEnter(ele){
@@ -147,7 +148,7 @@ function insertSetting() {
 //optionsInsert.innerHTML += '<tr><td colspan="2">Official Times Integration:  <input type="text" id="rawwcaid" style="width: auto;"></input><input type="Submit" name="LoadWCAid" value="load WCA ID" onclick="loadwcaid()"><p id="idcheck">0000XXXX00</p></td><td class="sr"></td></tr>';
  //document.getElementsByClassName('statc')[0].outerHTML += '<div><input type="text" id="rawwcaid" style="width: auto;" placeholder="Enter WCA ID"  onkeydown="checkEnter(this)"></input><span class="click" onclick="loadwcaid()"> Load </span></div>';
  //document.getElementById('timer').innerHTML += '<div style="position: absolute; bottom: 0; left: 50%;z-index: 50; transform: translateX(-50%);"><input type="text" id="rawwcaid" style="width: auto;" placeholder="Enter WCA ID"  onkeydown="checkEnter(this)"></input><span class="click" onclick="loadwcaid()"> Load </span></div>';
- document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',  '<div style="position: absolute; bottom: 0; left: 50%;z-index: 50; transform: translateX(-50%);"><input type="text" id="rawwcaid" style="width: auto;" placeholder="Enter WCA ID"  onkeydown="checkEnter(this)"></input><span class="click" onclick="loadwcaid()"> Load </span></div>');
+ document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend',  '<div style="position: absolute; bottom: 0; left: 50%;z-index: 50; transform: translateX(-50%);"><span class="click" onclick="highlighttimes()"> Refresh </span><input type="text" id="rawwcaid" style="width: auto;" placeholder="Enter WCA ID"  onkeydown="checkEnter(this)"></input><span class="click" onclick="loadwcaid()"> Load </span></div>');
 
 }
 
@@ -156,7 +157,7 @@ timeslist = document.getElementsByClassName("myscroll");
 alltimes = timeslist[0].firstChild.firstChild.rows;
 
 // Select the node that will be observed for mutations
-const targetNode = timeslist[0].firstChild.firstChild;
+const targetNode = timeslist[0];
 
 // Options for the observer (which mutations to observe)
 const config = { attributes: true, childList: true, subtree: true };
